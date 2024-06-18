@@ -25,7 +25,7 @@ let {id} = useParams()
               <div className="detail-header">
                 <h2>Name: {character.name}</h2>
                 <h3>Gender: {character.gender}</h3>
-                <Link to="/characters"> Return to character list</Link>
+                <Link to="/characters"> Return to Characters</Link>
               </div>
             </div>
           ) : <h2>Loading Data...</h2>;

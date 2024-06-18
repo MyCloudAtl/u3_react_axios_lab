@@ -2,12 +2,14 @@ import { Route, Routes} from 'react-router-dom'
 import StarshipList from './StarshipList'
 import StarshipPage from './StarshipPage'
 import CharactersPage from './CharactersPage'
-// import PlanetsPage from './PlanetsPage'
+import PlanetsPage from './PlanetsPage'
 import FilmsPage from './FilmsPage'
 import Characters from './Characters'
 import Planets from './Planets'
 import Films from './Films'
 import Home from './Home'
+import Vehicles from './Vehicles'
+import VehiclesPage from './VehiclesPage'
 
 const Main = (props) => {
     console.log('Main', props)
@@ -25,8 +27,10 @@ const Main = (props) => {
         <Route path="/characters" element = {<Characters />} />
         <Route path="/starships/:id" element = {<StarshipPage />} />
         <Route path="/characters/:id" element = {<CharactersPage />} />
-        {/* <Route path="/planets/:id" element = {<PlanetsPage />} /> */}
+        <Route path="/planets/:id" element = {<PlanetsPage />} />
         <Route path="/films/:id" element = {<FilmsPage />} />
+        <Route path="/vehicles/:id" element = {<VehiclesPage />} />
+        <Route path="/vehicles" element = {<Vehicles />} />
     </Routes>
       </div>
     )

@@ -23,6 +23,9 @@ const Nav = (props) => {
        <Link to="/starships">
             <h2>Starships</h2>
         </Link>
+        <Link to="/vehicles">
+            <h2>Vehicles</h2>
+        </Link>
       </div>
     )
     // }   

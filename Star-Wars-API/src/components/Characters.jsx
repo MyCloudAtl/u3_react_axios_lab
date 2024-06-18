@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useNavigate } from "react-router-dom"
 
 const Characters = (props) => {
     // console.log('Characters', props)
@@ -17,11 +18,17 @@ const Characters = (props) => {
     // if (!props.Characters) {
     //     return <h1> Loading... Please Wait </h1>
     // } else { 
+    let navigate = useNavigate()
+
+    const showCharacter = (index) => {
+        navigate(`${index}`)
+      }
+
     return (
       <div className="Characters">
        <h2>Characters</h2>
        {characters.map((character,index)=> (
-        <div className="characterDiv" key={index}>
+        <div className="characterDiv" onClick={()=>showCharacter(index)} key={index}>
             <ul>
                 <li>Name: {character.name}</li>
                 <li>Gender: {character.gender}</li>

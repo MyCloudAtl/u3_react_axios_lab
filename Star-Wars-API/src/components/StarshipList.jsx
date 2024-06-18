@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useNavigate } from "react-router-dom"
 
 const StarshipList = (props) => {
     // console.log('StarshipList', props)
@@ -17,11 +18,17 @@ const StarshipList = (props) => {
     // if (!props.StarshipList) {
     //     return <h1> Loading... Please Wait </h1>
     // } else { 
+    let navigate = useNavigate()
+
+    const showShip = (index) => {
+          navigate(`${index}`)
+        }
+
     return (
       <div className="StarshipList">
        <h2>StarshipList</h2>
        {starships.map((starship,index)=> (
-        <div className="starshipDiv" key={index}>
+        <div className="starshipDiv" onClick={()=>showShip(index)} key={index}>
             <ul>
                 <li>Name: {starship.name}</li>
                 <li>Manufactruer: {starship.manufacturer}</li>
